@@ -11,19 +11,27 @@
             background-color: #133341;
             color: rgb(91, 186, 2);
         }
-        li{
+
+        li {
             color: brown;
         }
     </style>
 </head>
 
 <body>
-    <h1>Crack The Dom</h1>
+    <h1 id="hello-Crack">Crack The Dom</h1>
     <ul>
-        <li>Crack The Html</li>
+        <li class="All-text">Crack The Html</li>
         <li>Crack The Css</li>
-        <li>Crack The JavaScript</li>
+        <li class="All-text">Crack The JavaScript</li>
     </ul>
+
+    <ol class="All-text js css html python list">
+        <li>I am learn JavaScript</li>
+        <li>Hello Guys</li>
+        <li>I am student</li>
+        <li class="All-text">Learn from DOM</li>
+    </ol>
 
 
 
@@ -31,9 +39,58 @@
 
 
     <script>
-        console.log('student power');
+        // console.log('student power');
     </script>
 
+
+    <script>
+        // opction - 1
+        const liTag = document.getElementsByTagName('li')
+        for (const am of liTag) { /* forof loop use in selection all tag access and applying from css */
+            // console.log(am);
+            am.style.backgroundColor = 'purple' /* color name to must be match not dosen't work */
+            am.style.color = 'black'
+            am.style.padding = '10px'
+            am.style.margin = '15px'
+            am.style.fontSize = '20px'
+        }
+
+        // opction - 2
+        const liId = document.getElementById('hello-Crack').innerText = 'JavaScript Dom' /*Backend update the tag elements value */
+        // console.log(liId);
+
+        // opction - 3 
+        // const liIndex = document.getElementsByClassName('All-text')[1].innerHTML /* index number search the class tag element value and  */
+        // console.log(liIndex);
+
+        // opction - 4 
+        const liCollection = document.querySelectorAll('.All-text li') /* search the parent elements 'li' tag print the index number and length */
+        // console.log(liCollection);
+         
+        // opction - 5
+        const liCollection2 = document.querySelector('.All-text') /* the class name acess parent elements value */
+        // console.log(liCollection2);
+
+        const classs = document.getElementsByTagName('ol')[0].classList.replace('python', 'world')/* 'ol' all elements index number search and change value && print the const varyable dicler*/
+        // console.log(classs);
+        document.getElementsByTagName('ol')[0].classList.remove("css") /* not dicler varible */
+
+        const classIndex = document.getElementsByTagName('ol')[0].classList /* search the all class name dicler with like of array*/
+        // console.log(classIndex);
+
+        document.getElementsByTagName('ol')[0].classList.add('Developer')
+
+        
+
+
+        
+        
+        
+        
+
+
+
+    </script>
 </body>
 
 </html>
